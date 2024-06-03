@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es2016",                           
+    "module": "commonjs",                               
+    "esModuleInterop": true,                       
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node10",
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist"                                /* Skip type checking all .d.ts files. */
+  }
+}
