@@ -15,10 +15,6 @@ app.get('/', (req, res) => {
   res.send('Hello world!')
 })
 
-app.get('/bubble', (req, res) => {
-  res.send('Hello bubbler!')
-})
-
 app.use(express.static('./public'))
 app.use(cors('*' as CorsOptions))
 
