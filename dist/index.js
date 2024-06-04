@@ -5,18 +5,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
-const server = (0, express_1.default)();
+const app = (0, express_1.default)();
 const port = process.env.PORT || 3000;
-server.listen(port, () => {
+app.listen(port, () => {
     console.log('Listening on port', port);
 });
-server.use(express_1.default.json());
-server.get('/', (req, res) => {
+app.use(express_1.default.json());
+app.get('/', (req, res) => {
     res.send('Hello world!');
 });
-server.get('/bubble', (req, res) => {
-    res.send('Hello bubble!');
+app.get('/bubble', (req, res) => {
+    res.send('Hello bubbler!');
 });
-server.use(express_1.default.static('./public'));
-server.use((0, cors_1.default)('*'));
-exports.default = server;
+app.use(express_1.default.static('./public'));
+app.use((0, cors_1.default)('*'));
+exports.default = app;

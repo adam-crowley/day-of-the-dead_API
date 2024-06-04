@@ -7,6 +7,6 @@
     "moduleResolution": "node10",
     "strict": true,
     "skipLibCheck": true,
-    "outDir": "dist"                                /* Skip type checking all .d.ts files. */
+    "outDir": "../dist"                                /* Skip type checking all .d.ts files. */
   }
 }
