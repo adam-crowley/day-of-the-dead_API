@@ -1,6 +1,6 @@
 import express from 'express'
 import { join } from 'node:path'
-import cors, { CorsOptions } from 'cors'
+import cors from 'cors'
 
 import locations from './routes/locations'
 import schedule from './routes/schedule'
@@ -9,6 +9,15 @@ import events from './routes/events'
 const app = express()
 
 const port = process.env.PORT || 3000
+
+const options = [
+  cors({
+    origin: '*',
+    methods: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
+  }),
+]
 
 app.listen(port, () => {
   console.log('Listening on port', port)
@@ -25,6 +34,6 @@ app.use('/api/v1/events', events)
 app.use('/api/v1/*', (req, res) => res.sendStatus(404))
 
 app.use(express.static(join(__dirname, './public')))
-app.use(cors('*' as CorsOptions))
+app.use(options)
 
 export default app
